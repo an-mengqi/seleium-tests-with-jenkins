@@ -18,7 +18,7 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'mkdir selenium-autotests/logs'
+        sh 'mkdir seleium-tests-with-jenkins/logs'
         sh 'python -m pytest seleium-tests-with-jenkins/tests/test_admin.py --url=http://192.168.0.15:8081/admin'
       }
     }
