@@ -19,7 +19,9 @@ pipeline {
       }
     }
     stage('test') {
-
+      environment {
+        PATH = "/hot/new/bin:${env.PATH}"
+      }
 //         environment {
 //             PATH = ':/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers'
 //         }
