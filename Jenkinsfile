@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+        PATH = '${env.PATH}:/Users/anastasiiamonakhova/otus/drivers/chromedriver'
+    }
     agent{
         docker{
         args '-e "HOME=/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests"'
@@ -14,6 +17,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'pip install --user -r seleium-tests-with-jenkins/requirements.txt'
+        echo "PATH is: ${env.PATH}"
       }
     }
     stage('test') {
