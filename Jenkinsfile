@@ -21,7 +21,7 @@ pipeline {
     stage('test') {
 
         environment {
-            PATH = '${env.PATH}:/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers'
+            PATH = PATH + ':/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers'
         }
       steps {
         echo "PATH after is: ${env.PATH}"
