@@ -16,6 +16,7 @@ pipeline {
          }
     stage('build') {
       steps {
+        sh 'ls ~'
         sh 'pip install --user -r seleium-tests-with-jenkins/requirements.txt'
         echo "PATH is: ${env.PATH}"
       }
