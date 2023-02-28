@@ -22,13 +22,10 @@ pipeline {
       environment {
         PATH = "/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers:${env.PATH}"
       }
-//         environment {
-//             PATH = ':/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers'
-//         }
       steps {
         echo "PATH after is: ${env.PATH}"
         sh 'mkdir seleium-tests-with-jenkins/logs'
-        sh 'python -m pytest seleium-tests-with-jenkins/tests/test_admin.py --url=http://192.168.0.15:8081/admin'
+        sh 'python -m pytest seleium-tests-with-jenkins/tests/test_admin.py --browser=chrome --url=http://192.168.0.15:8081/admin'
       }
     }
   }
