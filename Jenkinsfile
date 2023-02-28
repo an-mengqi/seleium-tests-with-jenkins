@@ -1,7 +1,4 @@
 pipeline {
-    environment {
-        PATH = '~/drivers'
-    }
     agent{
         docker{
         args '-e "HOME=/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests"'
@@ -22,6 +19,10 @@ pipeline {
       }
     }
     stage('test') {
+
+        environment {
+            PATH = '/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers'
+        }
       steps {
         sh 'mkdir seleium-tests-with-jenkins/logs'
         sh 'python -m pytest seleium-tests-with-jenkins/tests/test_admin.py --url=http://192.168.0.15:8081/admin'
