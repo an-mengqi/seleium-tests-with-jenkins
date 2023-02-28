@@ -35,7 +35,7 @@ def browser(request):
     elif _browser == "chrome":
         # driver = webdriver.Chrome(executable_path=f"{driver_folder}{os.sep}chromedriver")
         # path_to_driver_test = "/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers/chromedriver_correct"
-        path_to_driver_test = "drivers/chromedriver_correct"
+        path_to_driver_test = "seleium-tests-with-jenkins/drivers/chromedriver_correct"
         print(f"PATH TO DRIVER: {path_to_driver_test}")
         driver = webdriver.Chrome(executable_path=f"{path_to_driver_test}")
     elif _browser == "yandex":
