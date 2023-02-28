@@ -23,6 +23,7 @@ def browser(request):
 
     logger = logging.getLogger(request.node.name)
     file_handler = logging.FileHandler(f"seleium-tests-with-jenkins/logs/{request.node.name}.log")
+    # file_handler = logging.FileHandler(f"logs/{request.node.name}.log")
     file_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
     logger.addHandler(file_handler)
     logger.setLevel(level=log_level)
@@ -33,7 +34,8 @@ def browser(request):
         driver = webdriver.Firefox(firefox_binary="/usr/bin/firefox", executable_path=f"{driver_folder}{os.sep}geckodriver")
     elif _browser == "chrome":
         # driver = webdriver.Chrome(executable_path=f"{driver_folder}{os.sep}chromedriver")
-        path_to_driver_test = "/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers/chromedriver_correct"
+        # path_to_driver_test = "/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers/chromedriver_correct"
+        path_to_driver_test = "drivers/chromedriver_correct"
         print(f"PATH TO DRIVER: {path_to_driver_test}")
         driver = webdriver.Chrome(executable_path=f"{path_to_driver_test}")
     elif _browser == "yandex":
