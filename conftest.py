@@ -32,7 +32,10 @@ def browser(request):
     if _browser == "firefox" or _browser == "ff":
         driver = webdriver.Firefox(firefox_binary="/usr/bin/firefox", executable_path=f"{driver_folder}{os.sep}geckodriver")
     elif _browser == "chrome":
-        driver = webdriver.Chrome(executable_path=f"{driver_folder}{os.sep}chromedriver")
+        # driver = webdriver.Chrome(executable_path=f"{driver_folder}{os.sep}chromedriver")
+        path_to_driver_test = "/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers/chromedriver"
+        print(f"PATH TO DRIVER: {path_to_driver_test}")
+        driver = webdriver.Chrome(executable_path=f"{path_to_driver_test}")
     elif _browser == "yandex":
         driver = webdriver.Chrome(executable_path=f"{driver_folder}{os.sep}yandexdriver")
 
