@@ -8,7 +8,7 @@ from selenium import webdriver
 
 def pytest_addoption(parser):
     parser.addoption("--browser", default="chrome", help="choose browser: chrome, firefox, yandex")
-    parser.addoption("--driver_folder", default=os.path.expanduser("~/otus/drivers"))
+    parser.addoption("--driver_folder", default=os.path.expanduser("drivers"))
     parser.addoption("--url", action="store", default="http://192.168.0.15:8081")
     parser.addoption("--log_level", action="store", default="DEBUG")
 
