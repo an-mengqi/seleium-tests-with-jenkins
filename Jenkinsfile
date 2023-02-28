@@ -20,10 +20,11 @@ pipeline {
     }
     stage('test') {
 
-        environment {
-            PATH = PATH + ':/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers'
-        }
+//         environment {
+//             PATH = ':/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers'
+//         }
       steps {
+        sh 'export PATH=$PATH:/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests/seleium-tests-with-jenkins/drivers'
         echo "PATH after is: ${env.PATH}"
         sh 'mkdir seleium-tests-with-jenkins/logs'
         sh 'python -m pytest seleium-tests-with-jenkins/tests/test_admin.py --url=http://192.168.0.15:8081/admin'
