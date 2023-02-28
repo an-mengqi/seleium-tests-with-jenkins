@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        PATH = '${env.PATH}:/Users/anastasiiamonakhova/otus/drivers/chromedriver'
+        PATH = '/Users/anastasiiamonakhova/otus/drivers/chromedriver'
     }
     agent{
         docker{
