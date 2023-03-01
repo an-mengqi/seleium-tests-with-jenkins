@@ -1,8 +1,10 @@
 pipeline {
     agent{
         docker{
-        args '-e "HOME=/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests"'
-        image 'python:3' }
+            dockerfile true
+//         args '-e "HOME=/Users/anastasiiamonakhova/.jenkins/workspace/opencart-tests"'
+//         image 'python:3'
+        }
     }
   stages {
          stage('Get Code') {
